@@ -8,3 +8,13 @@ C:\Dev\LocalRepo\TemperatureConverter\TemperatureConverter\obj\Debug\Temperature
 C:\Dev\LocalRepo\TemperatureConverter\TemperatureConverter\obj\Debug\TemperatureConverter.csproj.CoreCompileInputs.cache
 C:\Dev\LocalRepo\TemperatureConverter\TemperatureConverter\obj\Debug\TemperatureConverter.exe
 C:\Dev\LocalRepo\TemperatureConverter\TemperatureConverter\obj\Debug\TemperatureConverter.pdb
+F:\TemperatureConverter\bin\Debug\TemperatureConverter.exe.config
+F:\TemperatureConverter\bin\Debug\TemperatureConverter.exe
+F:\TemperatureConverter\bin\Debug\TemperatureConverter.pdb
+F:\TemperatureConverter\obj\Debug\TemperatureConverter.csprojAssemblyReference.cache
+F:\TemperatureConverter\obj\Debug\TemperatureConverter.Form1.resources
+F:\TemperatureConverter\obj\Debug\TemperatureConverter.Properties.Resources.resources
+F:\TemperatureConverter\obj\Debug\TemperatureConverter.csproj.GenerateResource.cache
+F:\TemperatureConverter\obj\Debug\TemperatureConverter.csproj.CoreCompileInputs.cache
+F:\TemperatureConverter\obj\Debug\TemperatureConverter.exe
+F:\TemperatureConverter\obj\Debug\TemperatureConverter.pdb
