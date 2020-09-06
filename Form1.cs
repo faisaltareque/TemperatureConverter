@@ -27,6 +27,8 @@ namespace TemperatureConverter
             radioButtonCelToFahren.Checked = false;
             inputTextBox.Text = "";
             outputTextBox.Text = "";
+            errorTextLabel.Text = "";
+            errorTextLabel.Visible = false;
         }
 
         private void buttonConvert_Click(object sender, EventArgs e)
@@ -34,33 +36,53 @@ namespace TemperatureConverter
             String input = inputTextBox.Text;
             if(input == string.Empty)
             {
-                outputTextBox.Text = "Can not Convert Null";
+                errorTextLabel.Text = "Can not Convert empty value";
+                errorTextLabel.Visible = true;
                 return;
             }
-            double inputValue = double.Parse(inputTextBox.Text);
-            if (radioButtonFahrenToCel.Checked)
+
+
+            double parsedInputVal;
+
+            bool isNumeric = double.TryParse(input, out parsedInputVal);
+
+            if (!isNumeric)
             {
-                double celsuis = (inputValue - 32.0) * (5.0 / 9.0);
-                outputTextBox.Text = celsuis.ToString();
-            }else if (radioButtonCelToFahren.Checked)
-            {
-                double fahrenheit = (inputValue) * (9.0 / 5.0) + 32;
-                outputTextBox.Text = fahrenheit.ToString();
-            }
-            else if (radioButtonCelToKel.Checked)
-            {
-                double kelvin = (inputValue) + 273.0;
-                outputTextBox.Text = kelvin.ToString();
-            }
-            else if (radioButtonKelToCel.Checked)
-            {
-                double celsius = (inputValue) - 273.0;
-                outputTextBox.Text = celsius.ToString();
-            }
-            else if (radioButtonFahrenToKel.Checked)
-            {
-                double kelvin = (inputValue - 32.0) * (5.0 / 9.0)+273.0;
-                outputTextBox.Text = kelvin.ToString();
+                errorTextLabel.Text = "Please put a number for coversion";
+                errorTextLabel.Visible = true;
+                return;
+            } else {
+                errorTextLabel.Visible = false;
+
+                if (radioButtonFahrenToCel.Checked)
+                {
+                    double celcius = (parsedInputVal - 32.0) * (5.0 / 9.0);
+                    outputTextBox.Text = celcius.ToString();
+                } else if (radioButtonCelToFahren.Checked)
+                {
+                    double fahrenheit = (parsedInputVal) * (9.0 / 5.0) + 32;
+                    outputTextBox.Text = fahrenheit.ToString();
+                }
+                else if (radioButtonCelToKel.Checked)
+                {
+                    double kelvin = (parsedInputVal) + 273.0;
+                    outputTextBox.Text = kelvin.ToString();
+                }
+                else if (radioButtonKelToCel.Checked)
+                {
+                    double celsius = (parsedInputVal) - 273.0;
+                    outputTextBox.Text = celsius.ToString();
+                }
+                else if (radioButtonFahrenToKel.Checked)
+                {
+                    double kelvin = (parsedInputVal - 32.0) * (5.0 / 9.0) + 273.0;
+                    outputTextBox.Text = kelvin.ToString();
+                }
+                else
+                {
+                    errorTextLabel.Text = "Choose a conversion type";
+                    errorTextLabel.Visible = true;
+                }
             }
         }
 
